@@ -9,20 +9,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class home : AppCompatActivity() {
+class wallet : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_wallet)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val findbusbtn: Button = findViewById(R.id.btnFindBus)
-        findbusbtn.setOnClickListener {
+        val topup: Button = findViewById(R.id.add_money)
+        topup.setOnClickListener {
             // Create an Intent to start the NextActivity
-            val intent = Intent(this, findbus::class.java)
+            val intent = Intent(this, add_money::class.java)
+            startActivity(intent)
+        }
+        // Get reference to the ImageView (tickets)
+        val homenavigate: ImageView = findViewById(R.id.home)
+
+
+        homenavigate.setOnClickListener {
+            val intent = Intent(this, home::class.java)
             startActivity(intent)
         }
         // Get reference to the ImageView (tickets)
@@ -47,12 +55,6 @@ class home : AppCompatActivity() {
 
         profilenavigate.setOnClickListener {
             val intent = Intent(this, profile::class.java)
-            startActivity(intent)
-        }
-        val viewticket: Button = findViewById(R.id.btnViewTicket)
-        viewticket.setOnClickListener {
-            // Create an Intent to start the NextActivity
-            val intent = Intent(this, view_ticket::class.java)
             startActivity(intent)
         }
     }

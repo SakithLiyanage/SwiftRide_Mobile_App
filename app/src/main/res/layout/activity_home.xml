@@ -1,360 +1,530 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fillViewport="true">
+    android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/white"
-        android:padding="20dp">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Header Section -->
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="43dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="24dp"
-            android:src="@drawable/user"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="2dp" />
-
-        <TextView
-            android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/lato"
-            android:text="Welcome back,"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Search Journey Card -->
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="Chanuda"
-            android:textColor="@color/Primary_color"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewSearch"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-            app:strokeWidth="0dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/rectangle_radient"
-                android:padding="24dp">
-
-                <TextView
-                    android:id="@+id/tvBoardingTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Boarding From"
-                    android:textColor="@color/Primary_color"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilOrigin"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="Select origin"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvBoardingTitle"
-                    app:startIconTint="@color/Primary_color">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etOrigin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
-                    android:id="@+id/tvDestinationTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Where are you going?"
-                    android:textColor="@color/Primary_color"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tilOrigin" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilDestination"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="Select destination"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusBottomEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDestinationTitle"
-                    app:startIconTint="@color/Primary_color">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etDestination"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnFindBus"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="24dp"
-                    android:backgroundTint="@color/black"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Find Bus"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:cornerRadius="8dp"
-                    app:iconGravity="textStart"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tilDestination" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Upcoming Journeys Section -->
-
-        <TextView
-            android:id="@+id/tvUpcomingJourneys"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/lato_bold"
-            android:text="Upcoming Journeys"
-            android:textColor="@color/Primary_color"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewSearch" />
-
-        <TextView
-            android:id="@+id/tvViewAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/lato"
-            android:text="View All"
-            android:textColor="@color/Primary_color"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvUpcomingJourneys"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvUpcomingJourneys"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewJourney1"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/light_orange"
-            android:backgroundTint="#E0E0E0"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUpcomingJourneys"
-            app:strokeWidth="0dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/ivBusIcon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:src="@drawable/tickets"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvJourneyDate"
-                    android:layout_width="84dp"
-                    android:layout_height="19dp"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/lato"
-                    android:text="May 15, 2023"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toEndOf="@id/ivBusIcon"
-                    app:layout_constraintHorizontal_bias="0.038"
-                    app:layout_constraintStart_toStartOf="@id/ivBusIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/ivBusIcon" />
-
-                <TextView
-                    android:id="@+id/tvFromLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato"
-                    android:text="From"
-                    android:textColor="@color/light_orange"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvOriginCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Colombo"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/tvFromLabel" />
-
-                <TextView
-                    android:id="@+id/tvDepartureTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato"
-                    android:text="6:00 AM"
-                    android:textColor="@color/Primary_color"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOriginCity" />
-
-                <TextView
-                    android:id="@+id/tvToLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato"
-                    android:text="To"
-                    android:textColor="@color/light_orange"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tvDestinationCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Kandy"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                    app:layout_constraintTop_toBottomOf="@+id/tvToLabel" />
-
-                <TextView
-                    android:id="@+id/tvArrivalTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/lato"
-                    android:text="9:00 AM"
-                    android:textColor="@color/Primary_color"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDestinationCity" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipBusType"
-                    android:layout_width="99dp"
-                    android:layout_height="34dp"
-                    android:layout_marginEnd="12dp"
-                    android:fontFamily="@font/lato"
-                    android:text="SLTB Express"
-                    android:textColor="@color/Primary_color"
-                    android:textSize="12sp"
-                    app:chipBackgroundColor="#E8F3FF"
-                    app:chipStrokeWidth="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.602" />
-
-                <TextView
-                    android:id="@+id/tvTimeLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/lato"
-                    android:text="Departing in 2 days"
-                    android:textColor="@color/light_orange"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvJourneyDate" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnViewTicket"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:fontFamily="@font/lato"
-                    android:text="View Ticket"
-                    android:textAllCaps="false"
-                    android:textColor="@color/Primary_color"
-                    app:cornerRadius="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/chipBusType"
-                    app:strokeColor="@color/Primary_color" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Space at the bottom for padding -->
-        <Space
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewJourney1" />
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="20dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <!-- Header Section -->
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="43dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="2dp" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato"
+                android:text="Welcome back,"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Search Journey Card -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="Chanuda"
+                android:textColor="@color/Primary_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewSearch"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUsername"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle_radient"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/tvBoardingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Boarding From"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilOrigin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Select origin"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBoardingTitle"
+                        app:startIconTint="@color/Primary_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etOrigin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvDestinationTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Where are you going?"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilOrigin" />
+
+                    <TextView
+                        android:id="@+id/tvDestinationTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Date"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilOrigin" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDestination"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Enter Date"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDestinationTitle2"
+                        app:startIconTint="@color/Primary_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDestination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDestination"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Select destination"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDestinationTitle"
+                        app:startIconTint="@color/Primary_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDestination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFindBus"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="110dp"
+                        android:backgroundTint="@color/black"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Find Bus"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        app:iconGravity="textStart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilDestination" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Upcoming Journeys Section -->
+
+            <TextView
+                android:id="@+id/tvUpcomingJourneys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="Upcoming Journeys"
+                android:textColor="@color/Primary_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewSearch" />
+
+            <TextView
+                android:id="@+id/tvViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/lato"
+                android:text="View All"
+                android:textColor="@color/Primary_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUpcomingJourneys"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvUpcomingJourneys"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewJourney1"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/light_orange"
+                android:backgroundTint="#E0E0E0"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUpcomingJourneys"
+                app:layout_constraintVertical_bias="0.0"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/ivBusIcon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@color/white"
+                        android:padding="12dp"
+                        android:src="@drawable/tickets"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvJourneyDate"
+                        android:layout_width="84dp"
+                        android:layout_height="19dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/lato"
+                        android:text="May 15, 2023"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@id/ivBusIcon"
+                        app:layout_constraintHorizontal_bias="0.038"
+                        app:layout_constraintStart_toStartOf="@id/ivBusIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/ivBusIcon" />
+
+                    <TextView
+                        android:id="@+id/tvFromLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato"
+                        android:text="From"
+                        android:textColor="@color/light_orange"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvOriginCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Colombo"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFromLabel" />
+
+                    <TextView
+                        android:id="@+id/tvDepartureTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato"
+                        android:text="6:00 AM"
+                        android:textColor="@color/Primary_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOriginCity" />
+
+                    <TextView
+                        android:id="@+id/tvToLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato"
+                        android:text="To"
+                        android:textColor="@color/light_orange"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDestinationCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Kandy"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
+                        app:layout_constraintTop_toBottomOf="@+id/tvToLabel" />
+
+                    <TextView
+                        android:id="@+id/tvArrivalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/lato"
+                        android:text="9:00 AM"
+                        android:textColor="@color/Primary_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDestinationCity" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBusType"
+                        android:layout_width="99dp"
+                        android:layout_height="34dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/lato"
+                        android:text="SLTB Express"
+                        android:textColor="@color/Primary_color"
+                        android:textSize="12sp"
+                        app:chipBackgroundColor="#E8F3FF"
+                        app:chipStrokeWidth="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.602" />
+
+                    <TextView
+                        android:id="@+id/tvTimeLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/lato"
+                        android:text="Departing in 2 days"
+                        android:textColor="@color/light_orange"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvJourneyDate" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewTicket"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/lato"
+                        android:text="View Ticket"
+                        android:textAllCaps="false"
+                        android:textColor="@color/Primary_color"
+                        app:cornerRadius="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/chipBusType"
+                        app:strokeColor="@color/Primary_color" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNavLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/Primary_color"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/explore_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:contentDescription="Explore"
+                app:srcCompat="@drawable/homeicon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Home"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/events_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tickets"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:contentDescription="Events"
+                app:srcCompat="@drawable/tickets" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Tickets"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ticket_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/wallet"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:contentDescription="Tickets"
+                app:srcCompat="@drawable/wallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Wallet"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:contentDescription="Profile"
+                app:srcCompat="@drawable/user" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lato"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

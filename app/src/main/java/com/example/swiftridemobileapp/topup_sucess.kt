@@ -2,27 +2,29 @@ package com.example.swiftridemobileapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class signup : AppCompatActivity() {
+class topup_sucess : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_topup_sucess)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val getStartedButton: Button = findViewById(R.id.booking_btn)
-        getStartedButton.setOnClickListener {
-            // Create an Intent to start the NextActivity
-            val intent = Intent(this, signin::class.java)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, wallet::class.java)
             startActivity(intent)
-        }
+            // Optionally finish the current activity
+            finish()
+        }, 3000) // 3000ms delay
     }
 }

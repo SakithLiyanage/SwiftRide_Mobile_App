@@ -36,10 +36,10 @@
                 android:id="@+id/tvUpcomingJourneys"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/lato_bold"
-                android:text="Find a Bus"
+                android:text="Wallet"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/lato"
-                android:text="Select Your Bus"
+                android:text="LKR 2000"
                 android:textColor="@color/Primary_color"
-                android:textSize="14sp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvUpcomingJourneys" />
@@ -63,39 +64,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="29dp"
-                android:text="Colombo - Kandy"
+                android:fontFamily="@font/lato_bold"
+                android:text="Wallet Balance"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:fontFamily="@font/lato_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvViewAll" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="07th - March - 2025 | Friday"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="Passbook"
                 android:textColor="@color/black"
-                android:textSize="14sp"
-                android:fontFamily="@font/lato"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewJourney1"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/light_orange"
                 android:backgroundTint="#E0E0E0"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
                 app:strokeWidth="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,177 +105,59 @@
                     android:layout_height="wrap_content"
                     android:padding="16dp">
 
-                    <ImageView
-                        android:id="@+id/ivBusIcon"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:background="@color/white"
-                        android:padding="12dp"
-                        android:src="@drawable/tickets"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                     <TextView
                         android:id="@+id/tvJourneyDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:fontFamily="@font/lato"
-                        android:text="May 15, 2023"
+                        android:text="01 March 2025 09:06 AM"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="@id/ivBusIcon"
-                        app:layout_constraintTop_toBottomOf="@+id/ivBusIcon" />
-
-                    <TextView
-                        android:id="@+id/tvFromLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato"
-                        android:text="From"
-                        android:textColor="@color/light_orange"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvTimeLeft"
+                        tools:layout_editor_absoluteX="-4dp" />
 
                     <TextView
                         android:id="@+id/tvFromLabel3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="52dp"
+                        android:layout_marginTop="8dp"
                         android:fontFamily="@font/lato"
-                        android:text="15 Seats  left"
+                        android:text="+ LKR 1000"
                         android:textColor="#65A905"
                         android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@+id/tvTimeLeft"
-                        tools:layout_editor_absoluteX="1dp" />
-
-                    <TextView
-                        android:id="@+id/tvFromLabel2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato"
-                        android:text="From"
-                        android:textColor="@color/light_orange"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
+                        app:layout_constraintStart_toEndOf="@+id/tvTimeLeft"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvOriginCity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Colombo"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                        app:layout_constraintTop_toBottomOf="@+id/tvFromLabel" />
-
-                    <TextView
-                        android:id="@+id/tvDepartureTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato"
-                        android:text="6:00 AM"
-                        android:textColor="@color/Primary_color"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/ivBusIcon"
-                        app:layout_constraintTop_toBottomOf="@+id/tvOriginCity" />
-
-                    <TextView
-                        android:id="@+id/tvToLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato"
-                        android:text="To"
-                        android:textColor="@color/light_orange"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvDestinationCity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Kandy"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                        app:layout_constraintTop_toBottomOf="@+id/tvToLabel" />
-
-                    <TextView
-                        android:id="@+id/tvArrivalTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:fontFamily="@font/lato"
-                        android:text="9:00 AM"
-                        android:textColor="@color/Primary_color"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toEndOf="@+id/tvDepartureTime"
-                        app:layout_constraintTop_toBottomOf="@+id/tvDestinationCity" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chipBusType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato"
-                        android:text="SLTB Express"
-                        android:textColor="@color/Primary_color"
-                        android:textSize="12sp"
-                        app:chipBackgroundColor="#E8F3FF"
-                        app:chipStrokeWidth="0dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.566" />
 
                     <TextView
                         android:id="@+id/tvTimeLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
                         android:fontFamily="@font/lato"
-                        android:text="SuperLine Travels"
+                        android:text="Added money to wallet"
                         android:textColor="@color/Primary_color"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvJourneyDate" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnViewTicket"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:fontFamily="@font/lato"
-                        android:text="LKR 1500"
-                        android:textAllCaps="false"
-                        android:textColor="@color/Primary_color"
-                        app:cornerRadius="8dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/chipBusType"
-                        app:strokeColor="@color/Primary_color" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <ImageView
-                android:id="@+id/back_btn"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_money"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toStartOf="@+id/tvUpcomingJourneys"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/baseline_arrow_back_24" />
+                android:fontFamily="@font/lato"
+                android:text="+ Add Money"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:cornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:strokeColor="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
