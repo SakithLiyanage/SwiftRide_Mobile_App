@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SwiftRide Mobile App</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="cpass">Confirm Password</string>
+</resources>
